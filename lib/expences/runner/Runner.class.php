@@ -58,5 +58,9 @@ class Runner
    */
   public function run()
   {
+    $factory = new \expences\factories\BankSummaryReader();
+    $reader  = $factory->getBankSummaryReader($this->_config->bank, $this->_config->type);
+    $result  = $reader->readFiles($this->_config->dataDirectory);
+    return $result;
   }
 }

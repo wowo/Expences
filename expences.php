@@ -1,6 +1,6 @@
 #!/usr/bin/env php
 <?php
-printf("\n\n=== Expences===\n\n");
+//printf("\n\n=== Expences===\n\n");
 
 require_once "lib/expences/runner/Runner.class.php";
 \expences\runner\Runner::autoloadRegister();
@@ -8,7 +8,7 @@ require_once "lib/expences/runner/Runner.class.php";
 
 $config = new \expences\configuration\Runner();
 $config->dataDirectory = __DIR__ . "/data/credit";
-$config->summaryType = "credit";
+$config->type = "credit";
+$config->bank = "mbank";
 $runner = new \expences\runner\Runner($config);
-
-printf("Runner\n");
+$results = $runner->run();

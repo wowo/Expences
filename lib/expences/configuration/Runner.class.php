@@ -13,6 +13,25 @@ namespace expences\configuration;
  */
 class Runner implements IConfiguration
 {
+  /**
+   * directory storing summaries
+   * 
+   * @var mixed
+   * @access public
+   */
   public $dataDirectory;
-  public $summaryType;
+  /**
+   * type of the summary (current/credit)
+   * 
+   * @var mixed
+   * @access public
+   */
+  public $type;
+  /**
+   * bank name 
+   * 
+   * @var mixed
+   * @access public
+   */
+  public $bank;
 }
