@@ -13,14 +13,22 @@ namespace expences\runner;
 class Runner
 {
   /**
+   * _config 
+   * 
+   * @var IConfiguration
+   * @access protected
+   */
+  protected $_config = null;
+
+  /**
    * __construct 
    * 
    * @access public
    * @return void
    */
-  public function __construct()
+  public function __construct(\expences\configuration\IConfiguration $config)
   {
-    $this->_autoloadRegister();
+    $this->_config = $config;
   }
 
   /**
@@ -29,13 +37,26 @@ class Runner
    * @access protected
    * @return void
    */
-  protected function _autoloadRegister()
+  public static function autoloadRegister($verbose = false)
   {
     spl_autoload_register(function($className) {
       $level = count(explode("\\", __NAMESPACE__));
       $classPath = str_replace("\\", "/", $className);
       $path = sprintf("%s/%s%s.class.php", __DIR__, str_repeat("../", $level), $classPath);
+      if ($verbose) {
+        printf("\t%s -> %s\n", $className, $path);
+      }
       require_once($path);
     });
+  }
+
+  /**
+   * Runs expences process - retrieves data from disk and forms it into nice way
+   * 
+   * @access public
+   * @return void
+   */
+  public function run()
+  {
   }
 }
