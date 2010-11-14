@@ -5,6 +5,7 @@ require_once "lib/expences/runner/Runner.class.php";
 \expences\runner\Runner::autoloadRegister();
 
 try {
+  ini_set("unload mongo.so", 1);
   $output = new \expences\output\Stdout();
   $logger = new \expences\output\Logger("php://stderr");
   $logger->log("Expences calculator");

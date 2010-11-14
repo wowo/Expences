@@ -16,6 +16,9 @@ abstract class BankSummary
   protected function _getXmls($directory)
   {
     $xmls = array();
+    if (!file_exists($directory)) {
+      throw new \InvalidArgumentException(sprintf("Directory %s doesn't exists!", $directory));
+    }
     foreach (new \DirectoryIterator($directory) as $file) {
       if ($file->isFile()) {
         $path = sprintf("%s/%s", $directory, (string)$file);

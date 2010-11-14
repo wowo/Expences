@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
+    <title>tests/factories</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <!--[if IE]><script src="excanvas.compressed.js"></script><![endif]-->
     <script src="RGraph.common.js" ></script>
@@ -12,8 +12,8 @@
 
   <body>
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr><td class="title"></td></tr>
-      <tr><td><div align="center"><p><a href="index.html">Back to Code Coverage report</a></p></div></td></tr>
+      <tr><td class="title">tests/factories</td></tr>
+      <tr><td><div align="center"><p><a href="tests_factories.html">Back to Code Coverage report</a></p></div></td></tr>
       <tr><td class="ruler"><img src="glass.png" width="3" height="3" alt=""></td></tr>
     </table>
 
@@ -26,7 +26,7 @@
             <h2>Class Coverage Distribution</h2>
             <canvas id="classCoverageDistribution" width="475" height="200"></canvas>
             <script>
-            var ccd = new RGraph.Bar('classCoverageDistribution', [0,0,0,0,0,0,1,0,0,0,3,6]);
+            var ccd = new RGraph.Bar('classCoverageDistribution', [0,0,0,0,0,0,0,0,0,0,1,0]);
             ccd.Set('chart.background.barcolor1', 'white');
             ccd.Set('chart.background.barcolor2', 'white');
             ccd.Set('chart.colors', ['blue']);
@@ -43,7 +43,7 @@
             <h2>Class Complexity</h2>
             <canvas id="classComplexity" width="475" height="200"></canvas>
             <script>
-            var cc = new RGraph.Scatter('classComplexity', [[92,11,"blue","Runner"],[100,4,"blue","Operation"],[100,4,"blue","BankSummaryReader"],[100,7,"blue","BankSummary"],[100,4,"blue","Credit"],[50,1,"blue","CurrentAccount"],[100,1,"blue","BaseTestCase"],[90.9090909091,3,"blue","BankSummaryReaderTest"],[90.9090909091,3,"blue","CreditTest"],[100,2,"blue","RunnerTest"]]);
+            var cc = new RGraph.Scatter('classComplexity', [[90.9090909091,3,"blue","BankSummaryReaderTest"]]);
             cc.Set('chart.xmax', 100);
             cc.Set('chart.background.barcolor1', 'white');
             cc.Set('chart.background.barcolor2', 'white');
@@ -59,7 +59,6 @@
           <td valign="top">
             <h2>Top Project Risks</h2>
             <ul>
-              <li><a href="runner_Runner.class.php.html#13">Runner</a> (11)</li>
 
             </ul>
           </td>
@@ -67,10 +66,7 @@
           <td valign="top">
             <h2>Least Tested Methods</h2>
             <ul>
-              <li><a href="reader_mbank_CurrentAccount.class.php.html#24">CurrentAccount::readFiles</a> (0%)</li>
-              <li><a href="tests_reader_mbank_CreditTest.php.html#39">CreditTest::testNonexistingDirectory</a> (66%)</li>
               <li><a href="tests_factories_BankSummaryReaderTest.php.html#41">BankSummaryReaderTest::testGetBankSummaryReaderFakeData</a> (66%)</li>
-              <li><a href="runner_Runner.class.php.html#42">Runner::anonymous function</a> (83%)</li>
 
             </ul>
           </td>

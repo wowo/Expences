@@ -70,6 +70,8 @@ class Runner
   /**
    * checkConfiguration 
    * 
+   * @codeCoverageIgnore
+   *
    * @access public
    * @return void
    */

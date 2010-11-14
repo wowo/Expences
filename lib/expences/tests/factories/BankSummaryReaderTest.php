@@ -47,6 +47,8 @@ class BankSummaryReaderTest extends BaseTestCase
   /**
    * Provides fake data for testGetBankSummaryReaderFakeData
    * 
+   * @codeCoverageIgnore
+   *
    * @access public
    * @return void
    */
@@ -58,5 +60,4 @@ class BankSummaryReaderTest extends BaseTestCase
       array("mbank", "fakeType"),
     );
   }
-
 }
