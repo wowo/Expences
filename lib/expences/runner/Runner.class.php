@@ -39,7 +39,7 @@ class Runner
    */
   public static function autoloadRegister($verbose = false)
   {
-    spl_autoload_register(function($className) {
+    spl_autoload_register(function($className) use ($verbose) {
       $level = count(explode("\\", __NAMESPACE__));
       $classPath = str_replace("\\", "/", $className);
       $path = sprintf("%s/%s%s.class.php", __DIR__, str_repeat("../", $level), $classPath);

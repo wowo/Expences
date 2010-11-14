@@ -11,5 +11,7 @@ $config->dataDirectory = __DIR__ . "/data/credit";
 $config->type = "credit";
 $config->bank = "mbank";
 $runner = new \expences\runner\Runner($config);
-$results = $runner->run();
-var_dump($results);
+$operations = $runner->run();
+
+$output = new \expences\output\Stdout();
+$output->show($operations);

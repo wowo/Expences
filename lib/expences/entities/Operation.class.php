@@ -27,7 +27,7 @@ class Operation
    */
   public function cleanup()
   {
-    $this->_removeNewLines();
+    $this->_removeNewLinesAndTrim();
     $this->_convertAmounts();
   }
 
@@ -37,10 +37,11 @@ class Operation
    * @access public
    * @return void
    */
-  protected function _removeNewLines()
+  protected function _removeNewLinesAndTrim()
   {
     array_walk($this, function(&$value) {
       $value = str_replace("\n", "", $value);
+      $value = trim($value);
     });
   }
 
