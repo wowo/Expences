@@ -1,5 +1,5 @@
 <?php
-namespace \expences\exceptions;
+namespace expences\exceptions;
 
 /**
  * Exception thrown while not enough modules installed/loaded in PHP

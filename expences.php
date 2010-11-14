@@ -11,9 +11,12 @@ try {
 
   $config = new \expences\configuration\Runner(__DIR__ . "/data/credit", "credit", "mbank");
   $runner = new \expences\runner\Runner($config);
+  $runner->checkConfiguration();
+
   $operations = $runner->run();
   $logger->log(sprintf("Retreived %d operations", count($operations)));
   $output->show($operations);
   $logger->log("Finished");
 } catch (\expences\exceptions\PhpConfiguration $e) {
+  $logger->log($e->getMessage(), LOG_ERR);
 }

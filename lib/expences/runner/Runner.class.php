@@ -46,7 +46,10 @@ class Runner
       if ($verbose) {
         printf("\t%s -> %s\n", $className, $path);
       }
-      require_once($path);
+      if (file_exists($path)) {
+        require_once($path);
+      }
+      return true;
     });
   }
 
@@ -62,5 +65,21 @@ class Runner
     $reader  = $factory->getBankSummaryReader($this->_config->bank, $this->_config->type);
     $result  = $reader->readFiles($this->_config->dataDirectory);
     return $result;
+  }
+
+  /**
+   * checkConfiguration 
+   * 
+   * @access public
+   * @return void
+   */
+  public function checkConfiguration()
+  {
+    if (!class_exists('\tidy')) {
+      throw new \expences\exceptions\PhpConfiguration("Tidy module not loaded!");
+    }
+    if (!class_exists('\Mongo')) {
+      throw new \expences\exceptions\PhpConfiguration("Mongo module not loaded!");
+    }
   }
 }
