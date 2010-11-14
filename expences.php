@@ -12,3 +12,4 @@ $config->type = "credit";
 $config->bank = "mbank";
 $runner = new \expences\runner\Runner($config);
 $results = $runner->run();
+var_dump($results);
