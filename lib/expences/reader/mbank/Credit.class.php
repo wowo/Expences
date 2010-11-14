@@ -24,8 +24,7 @@ class Credit extends \expences\reader\BankSummary implements \expences\reader\IB
     $result = array();
     $xmls = $this->_getXmls($directory);
     foreach ($xmls as $path => $xml) {
-      $result[$path] = $this->_getOperationsFromXml($xml);
-      continue;
+      $result = array_merge($result, $this->_getOperationsFromXml($xml));
     }
     return $result;
   }

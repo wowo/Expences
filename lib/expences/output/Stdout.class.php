@@ -19,13 +19,9 @@ class Stdout implements \expences\output\IOutput
    * @access public
    * @return void
    */
-  public function show(array $monthOperations)
+  public function show(array $operations)
   {
-    foreach ($monthOperations as $operations) {
-      foreach ($operations as $path => $operation) {
-        $this->showOne($operation);
-      }
-    }
+    array_walk($operations, array($this, "showOne"));
   }
 
   /**
