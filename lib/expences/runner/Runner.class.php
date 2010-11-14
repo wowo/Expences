@@ -2,7 +2,7 @@
 namespace expences\runner;
 
 /**
- * Runner 
+ * Runner object, which is kind of controlloer in fact
  * 
  * @package default
  * @version $id$
@@ -32,7 +32,7 @@ class Runner
   }
 
   /**
-   * _autoloadRegister 
+   * Registers autoload
    * 
    * @access protected
    * @return void

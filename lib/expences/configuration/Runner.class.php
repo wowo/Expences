@@ -34,4 +34,20 @@ class Runner implements IConfiguration
    * @access public
    */
   public $bank;
+
+  /**
+   * Constructor
+   * 
+   * @param mixed $dataDirectory 
+   * @param mixed $type 
+   * @param mixed $bank 
+   * @access public
+   * @return void
+   */
+  public function __construct($dataDirectory, $type, $bank)
+  {
+    $this->dataDirectory = $dataDirectory;
+    $this->type = $type;
+    $this->bank = $bank;
+  }
 }
