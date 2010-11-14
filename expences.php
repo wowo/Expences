@@ -16,7 +16,10 @@ try {
   $operations = $runner->run();
   $logger->log(sprintf("Retreived %d operations", count($operations)));
   $output->show($operations);
+
   $logger->log("Finished");
 } catch (\expences\exceptions\PhpConfiguration $e) {
   $logger->log($e->getMessage(), LOG_ERR);
+} catch (\Exception $e) {
+  $logger->log(sprintf("Fatal error occured (%s): %s", get_class($e), $e->getMessage()), LOG_CRIT);
 }

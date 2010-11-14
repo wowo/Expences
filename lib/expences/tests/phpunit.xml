@@ -1,0 +1,19 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="true"
+         colors="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="true"
+         stopOnFailure="true"
+         syntaxCheck="true"
+         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+         verbose="true"
+         strict="true">
+  <testsuites>
+    <testsuite name="Expences">
+      <directory>factories/</directory>
+      <directory>reader/mbank/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

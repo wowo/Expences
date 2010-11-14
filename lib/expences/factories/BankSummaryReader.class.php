@@ -30,11 +30,11 @@ class BankSummaryReader
             case "currentAccount":
               return new \expences\reader\mbank\CurrentAccount();
             default:
-              throw new \InvalidArgumentException(sprintf("No class for mbank '%s' account type", $type));
+              throw new \InvalidArgumentException(sprintf("No class for mbank '%s' account type", $type), 1);
           }
         break;
       default:
-        throw new \InvalidArgumentException(sprintf("No class for '%s' bank", $bank));
+        throw new \InvalidArgumentException(sprintf("No class for '%s' bank", $bank), 2);
         break;
     }
   }
